@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/settingsLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/settingsSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp" />
+
+        <CheckBox
+            android:id="@+id/settingsCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/settings_notifications_check_box" />
+
+        <Button
+            android:id="@+id/buttonSettingsShowTutorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/button_settings_show_tutorial" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/settingsProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</android.support.design.widget.CoordinatorLayout>

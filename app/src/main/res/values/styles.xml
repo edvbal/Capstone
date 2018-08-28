@@ -1,0 +1,27 @@
+<resources>
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme" parent="Base.AppTheme"/>
+
+    <style name="AppTheme.NoStatusBar"/>
+
+    <style name="AppTheme.TutorialTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.Launcher" parent="Base.AppTheme">
+        <item name="android:windowBackground">@drawable/splash_drawable</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Base.Widget.AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="Widget.AppTheme.ActionBar" parent="Base.Widget.AppTheme.ActionBar"/>
+</resources>

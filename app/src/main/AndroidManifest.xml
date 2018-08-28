@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.telesoftas.edvinas.onboardingedvblk">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".landing.SplashActivity"
+            android:theme="@style/AppTheme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".news.articles.ArticlesActivity"
+            android:theme="@style/AppTheme.NoStatusBar"/>
+        <activity
+            android:name=".news.details.ArticleDetailsActivity"
+            android:parentActivityName=".news.articles.ArticlesActivity"
+            android:theme="@style/AppTheme.NoStatusBar"/>
+        <activity
+            android:name=".tutorial.TutorialActivity"
+            android:theme="@style/AppTheme.TutorialTheme"/>
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:parentActivityName=".news.articles.ArticlesActivity"/>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher_round"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="7ffdd25ae17ff7564fe6766db94b829cd3f3dd43"/>
+
+        <!-- This meta-data tag is required to use Google Play Services. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Include the AdActivity configChanges and theme. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:exported="false"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent">
+        </activity>
+        <service
+            android:name=".utils.firebase.NotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".utils.widget.ArticlesWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/recipe_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".utils.widget.ArticlesWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <service android:name=".utils.widget.ArticlesWidgetHandler" />
+    </application>
+</manifest>

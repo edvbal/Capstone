@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "563074109469",
+    "firebase_url": "https://onboarding-edvblk.firebaseio.com",
+    "project_id": "onboarding-edvblk",
+    "storage_bucket": "onboarding-edvblk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563074109469:android:a55d9cd9d943a3e3",
+        "android_client_info": {
+          "package_name": "com.telesoftas.edvinas.onboardingedvblk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563074109469-at0e4ohddali34vtg85pdek0jbinq040.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.telesoftas.edvinas.onboardingedvblk",
+            "certificate_hash": "a0f9b47a87ca7b8dde64ae02d7fab3a1e733a713"
+          }
+        },
+        {
+          "client_id": "563074109469-5rdk8t343dtnk7k517tcp58bamg7agks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbwVJvMyMbSsgDbU0sJ9g-X9jQFkyLb4I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563074109469-5rdk8t343dtnk7k517tcp58bamg7agks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

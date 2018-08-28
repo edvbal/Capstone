@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="tutorial_images">
+        <item>@drawable/tutorial_drawable1</item>
+        <item>@drawable/tutorial_drawable2</item>
+        <item>@drawable/tutorial_drawable3</item>
+        <item>@drawable/tutorial_drawable4</item>
+        <item>@drawable/tutorial_drawable5</item>
+    </integer-array>
+    <integer-array name="tutorial_descriptions">
+        <item>@string/tutorial_description1</item>
+        <item>@string/tutorial_description2</item>
+        <item>@string/tutorial_description3</item>
+        <item>@string/tutorial_description4</item>
+        <item>@string/tutorial_description5</item>
+    </integer-array>
+</resources>
