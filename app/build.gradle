@@ -9,8 +9,8 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'de.aaschmid:gradle-cpd-plugin:1.0'
-        classpath 'io.fabric.tools:gradle:1.24.4'
+        classpath 'de.aaschmid:gradle-cpd-plugin:1.1'
+        classpath 'io.fabric.tools:gradle:1.25.4'
     }
 }
 
@@ -30,25 +30,15 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BASE_URL", "\"https://newsapi.org/v1/\""
-        buildConfigField "String", "API_KEY", "\"57a79eac5a8f44efa2bd3408139b83f3\""
+        buildConfigField "String", "API_KEY", "\"INSERT YOUR API KEY HERE\""
     }
 
     signingConfigs {
-        release
-    }
-
-    Properties properties = new Properties()
-    File propertiesFile = new File('app/key', 'signing.properties')
-    if (propertiesFile.exists()) {
-        properties.load(propertiesFile.newDataInputStream())
-        if (properties.containsKey('STORE_FILE')
-                && properties.containsKey('STORE_PASSWORD')
-                && properties.containsKey('KEY_ALIAS')
-                && properties.containsKey('KEY_PASSWORD')) {
-            signingConfigs.release.storeFile = new File(project.projectDir, properties['STORE_FILE'])
-            signingConfigs.release.storePassword = properties['STORE_PASSWORD']
-            signingConfigs.release.keyAlias = properties['KEY_ALIAS']
-            signingConfigs.release.keyPassword = properties['KEY_PASSWORD']
+        release {
+            keyAlias 'capstone'
+            keyPassword 'adnd2k18'
+            storeFile file("keystore.jks")
+            storePassword 'adnd2k18'
         }
     }
 
@@ -82,32 +72,34 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile 'com.android.support:appcompat-v7:' + supportVersionNumber
-    compile 'com.android.support:design:' + supportVersionNumber
-    compile 'com.android.support:cardview-v7:' + supportVersionNumber
-    compile 'com.android.support:customtabs:' + supportVersionNumber
+    implementation 'com.android.support:appcompat-v7:' + supportVersionNumber
+    implementation 'com.android.support:design:' + supportVersionNumber
+    implementation 'com.android.support:cardview-v7:' + supportVersionNumber
+    implementation 'com.android.support:customtabs:' + supportVersionNumber
 
-    implementation 'com.google.android.gms:play-services-ads:11.4.2'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+
+    implementation 'com.google.firebase:firebase-core:16.0.3'
 
     implementation 'com.jakewharton:butterknife:' + butterKnifeVersion
     annotationProcessor 'com.jakewharton:butterknife-compiler:' + butterKnifeVersion
 
-    compile 'com.jakewharton.timber:timber:4.7.0'
+    implementation 'com.jakewharton.timber:timber:4.7.0'
 
-    compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
 
-    compile 'com.squareup.retrofit2:retrofit:' + retrofitVersion
-    compile 'com.squareup.retrofit2:converter-gson:' + retrofitVersion
+    implementation 'com.squareup.retrofit2:retrofit:' + retrofitVersion
+    implementation 'com.squareup.retrofit2:converter-gson:' + retrofitVersion
     implementation 'com.squareup.retrofit2:adapter-rxjava2:' + retrofitVersion
 
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.13'
 
-    compile 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
-    compile 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
-    compile 'com.google.firebase:firebase-messaging:11.4.2'
+    implementation 'com.google.firebase:firebase-messaging:17.3.0'
 
     implementation "android.arch.lifecycle:extensions:$androidArchitectureVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$androidArchitectureVersion"
