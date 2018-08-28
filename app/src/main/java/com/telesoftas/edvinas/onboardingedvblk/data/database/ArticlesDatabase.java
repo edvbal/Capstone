@@ -3,7 +3,7 @@ package com.telesoftas.edvinas.onboardingedvblk.data.database;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
 
-@Database(version = 3, entities = {ArticleEntity.class})
+@Database(version = 3, entities = {ArticleEntity.class}, exportSchema = false)
 //@TypeConverters(Converters::class)
 public abstract class ArticlesDatabase extends RoomDatabase {
     public abstract ArticleDao articleDao();
