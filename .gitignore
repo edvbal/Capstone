@@ -21,9 +21,6 @@ Thumbs.db
 *.tap
 *.trace
 
-# Signing
-*.jks
-*.keystore
 
 # Local configuration
 local.properties
